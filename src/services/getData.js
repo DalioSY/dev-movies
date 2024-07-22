@@ -1,17 +1,33 @@
 import api from "./api";
 
+export async function getNowPlayingMovies() {
+  const {
+    data: { results },
+  } = await api.get("/movie/now_playing");
+
+  return results;
+}
+
 export async function getMovies() {
   const {
     data: { results },
   } = await api.get("/movie/popular");
 
-  return results[0];
+  return results;
 }
 
 export async function getTopMovies() {
   const {
     data: { results },
   } = await api.get("/movie/top_rated");
+
+  return results;
+}
+
+export async function getUpcomingMovies() {
+  const {
+    data: { results },
+  } = await api.get("/movie/upcoming");
 
   return results;
 }
@@ -60,12 +76,4 @@ export async function getMovieById(movieId) {
   const { data } = await api.get(`/movie/${movieId}`);
 
   return data;
-}
-//--
-export async function getTopRecommended() {
-  const {
-    data: { results },
-  } = await api.get("/movie/now_playing");
-
-  return results;
 }

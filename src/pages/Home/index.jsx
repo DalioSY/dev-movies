@@ -25,7 +25,7 @@ export function Home() {
     async function getAllData() {
       Promise.all([getMovies(), getTopMovies(), getTopSeries(), getTopPeople()])
         .then(([movie, topMovie, topSeries, topPeople]) => {
-          setMovie(movie);
+          setMovie(movie[0]);
           setTopMovies(topMovie);
           setTopSeries(topSeries);
           setTopPeople(topPeople);
@@ -34,7 +34,6 @@ export function Home() {
           console.error(error);
         });
     }
-
     getAllData();
   }, []);
 
@@ -49,11 +48,6 @@ export function Home() {
             <Info>
               <h1>{movie.title} </h1>
               <p>{movie.overview} </p>
-              {/* <p>{movie.original_title} </p>
-              <p>Popularity {movie.popularity} </p>
-              <p>Data de lançamento {movie.release_date} </p>
-              <p>✔️{movie.vote_average} </p>
-              <p>✖️{movie.vote_count} </p> */}
               <ContainerButtons>
                 <Button
                   blue

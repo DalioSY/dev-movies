@@ -19,6 +19,7 @@ export function Detail() {
   const [movieVideos, setMovieVideos] = useState();
   const [movieCredits, setMovieCredits] = useState();
   const [movieSimilar, setMovieSimilar] = useState();
+  console.log(movie);
 
   useEffect(() => {
     async function getAllData() {

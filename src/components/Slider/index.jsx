@@ -9,7 +9,7 @@ export function Slider({ info, title }) {
       <h2>{title} </h2>
       <Swiper
         grabCursor
-        spaceBetween={10}
+        spaceBetween={20}
         slidesPerView={"auto"}
         className="swiper"
       >
