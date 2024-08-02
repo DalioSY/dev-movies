@@ -38,23 +38,34 @@ export function Movies() {
 
   return (
     <>
-      <Nav>
-        <input type="text" placeholder="Digite aqui" />
-        <ul>
-          <li>Comédia</li>
-          <li>Ação</li>
-          <li>Romance</li>
-          <li>Anime</li>
-          <li>Avendura</li>
-        </ul>
-      </Nav>
+      <Nav></Nav>
       {nowPlayingMovies && (
-        <Slider info={nowPlayingMovies} title={"Novos Filmes"}></Slider>
+        <Slider
+          info={nowPlayingMovies}
+          title={"Novos Filmes"}
+          route={`/detalhe-filme/`}
+        ></Slider>
       )}
-      {movies && <Slider info={movies} title={"Popular Filmes"}></Slider>}
-      {topMovies && <Slider info={topMovies} title={"Top Filmes"}></Slider>}
+      {movies && (
+        <Slider
+          info={movies}
+          title={"Popular Filmes"}
+          route={`/detalhe-filme/`}
+        ></Slider>
+      )}
+      {topMovies && (
+        <Slider
+          info={topMovies}
+          title={"Top Filmes"}
+          route={`/detalhe-filme/`}
+        ></Slider>
+      )}
       {upcomingMovies && (
-        <Slider info={upcomingMovies} title={"Próximos Filmes"}></Slider>
+        <Slider
+          info={upcomingMovies}
+          title={"Próximos Filmes"}
+          route={`/detalhe-filme/`}
+        ></Slider>
       )}
     </>
   );

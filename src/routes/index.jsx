@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
-import { Detail } from "../pages/Detail";
+import { DetailMovies } from "../pages/DetailMovies";
+import { DetailSeries } from "../pages/DetailSeries";
 import { Home } from "../pages/Home";
 import { Movies } from "../pages/Movies";
 import { Series } from "../pages/Series";
@@ -13,7 +14,8 @@ export function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/filmes" element={<Movies />} />
         <Route path="/series" element={<Series />} />
-        <Route path="/detalhe/:id" element={<Detail />} />
+        <Route path="/detalhe-filme/:id" element={<DetailMovies />} />
+        <Route path="/detalhe-serie/:id" element={<DetailSeries />} />
       </Route>
     </Routes>
   );

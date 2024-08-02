@@ -52,7 +52,7 @@ export function Home() {
                 <Button
                   blue
                   onClick={() => {
-                    navigate(`/detalhe/${movie.id}`);
+                    navigate(`/detalhe-filme/${movie.id}`);
                   }}
                 >
                   Assista Agora
@@ -68,9 +68,23 @@ export function Home() {
           </Container>
         </Background>
       )}
-      {topMovies && <Slider info={topMovies} title={"Top Filmes"}></Slider>}
-      {topSeries && <Slider info={topSeries} title={"Top Séries"}></Slider>}
-      {topPeople && <Slider info={topPeople} title={"Top Artistas"}></Slider>}
+      {topMovies && (
+        <Slider
+          info={topMovies}
+          title={"Top Filmes"}
+          route={"/detalhe-filme/"}
+        ></Slider>
+      )}
+      {topSeries && (
+        <Slider
+          info={topSeries}
+          title={"Top Séries"}
+          route={"/detalhe-serie/"}
+        ></Slider>
+      )}
+      {topPeople && (
+        <Slider info={topPeople} title={"Top Artistas"} route={false}></Slider>
+      )}
     </>
   );
 }

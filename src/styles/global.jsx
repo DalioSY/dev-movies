@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
+  scrollbar-width: none
 }
 
 body {

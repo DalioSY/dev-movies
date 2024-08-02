@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { Credits } from "../../components/Credits";
+import { Slider } from "../../components/Slider/index";
 import { SpanGenres } from "../../components/SpanGenres";
 import {
   getMovieById,
@@ -9,17 +10,15 @@ import {
   getMovieSimilar,
   getMovieVideos,
 } from "../../services/getData";
-import { Slider } from "./../../components/Slider/index";
-import { getImages } from "./../../utils/getImages";
+import { getImages } from "../../utils/getImages";
 import { Background, Container, ContainerMovies, Cover, Info } from "./styles";
 
-export function Detail() {
+export function DetailMovies() {
   const { id } = useParams();
   const [movie, setMovie] = useState();
   const [movieVideos, setMovieVideos] = useState();
   const [movieCredits, setMovieCredits] = useState();
   const [movieSimilar, setMovieSimilar] = useState();
-  console.log(movie);
 
   useEffect(() => {
     async function getAllData() {
@@ -40,7 +39,7 @@ export function Detail() {
         });
     }
     getAllData();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -73,7 +72,11 @@ export function Detail() {
               ))}
           </ContainerMovies>
           {movieSimilar && (
-            <Slider info={movieSimilar} title={"Filmes Similares"}></Slider>
+            <Slider
+              info={movieSimilar}
+              title={"Filmes Similares"}
+              route={"/detalhe-filme/"}
+            ></Slider>
           )}
         </>
       )}
