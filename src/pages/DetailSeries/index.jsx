@@ -11,13 +11,7 @@ import {
   getSerieVideos,
 } from "../../services/getData";
 import { getImages } from "../../utils/getImages";
-import {
-  Background,
-  Container,
-  ContainerMovies,
-  Cover,
-  Info,
-} from "./styles copy";
+import { Background, Container, ContainerMovies, Cover, Info } from "./styles";
 
 export function DetailSeries() {
   const [serie, setSerie] = useState();

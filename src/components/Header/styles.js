@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import api from "./../../services/api";
-
 export const Container = styled.div`
   z-index: 999;
   width: 100vw;
